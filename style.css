@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #080816;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px 10px;
+}
+
+h1 {
+  color: #ffeb00;
+  font-size: 60px;
+  margin-bottom: 15px;
+  letter-spacing: 5px;
+}
+
+body > p {
+  color: #cccccc;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+#hud {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto 12px;
+  display: flex;
+  justify-content: space-between;
+  color: #ffeb00;
+  font-size: 20px;
+}
+
+#game-container {
+  width: 600px;
+  height: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: black;
+  border: 4px solid #2121de;
+  border-radius: 8px;
+
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wall {
+  background-color: #2121de;
+  border: 3px solid #4141ff;
+  border-radius: 7px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ffebc2;
+  border-radius: 50%;
+}
+
+/* PAC-MAN */
+
+#pacman {
+  width: 30px;
+  height: 30px;
+
+  background: conic-gradient(
+    from 35deg,
+    transparent 0deg 70deg,
+    #ffeb00 70deg 360deg
+  );
+
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 10;
+}
+
+/* FANTASMAS */
+
+.ghost {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index: 9;
+  border-radius: 50% 50% 4px 4px;
+}
+
+.ghost-eye {
+  position: absolute;
+  top: 8px;
+  width: 8px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.ghost-eye.left {
+  left: 6px;
+}
+
+.ghost-eye.right {
+  right: 6px;
+}
+
+.ghost-pupil {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  width: 4px;
+  height: 5px;
+  background-color: #111;
+  border-radius: 50%;
+}
+
+/* TELA DE FIM DE JOGO */
+
+#game-overlay {
+  width: 600px;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #15152c;
+  border: 2px solid #ffeb00;
+  border-radius: 12px;
+}
+
+#game-overlay h2 {
+  color: #ffeb00;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+#game-overlay p {
+  margin-bottom: 18px;
+}
+
+#restart-button {
+  background-color: #ffeb00;
+  color: #080816;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#restart-button:hover {
+  background-color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  body {
+    padding: 25px 8px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  #hud {
+    font-size: 15px;
+  }
+
+  .wall {
+    border-width: 2px;
+  }
+}
